@@ -1,0 +1,631 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://www.lucagrulla.com/node-tail"
+
+    >tail (v1.2.1)</a>
+</h1>
+<h4>tail a file in node</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tail">module tail</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail">
+            function <span class="apidocSignatureSpan">tail.</span>Tail
+            <span class="apidocSignatureSpan">(filename, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tail.</span>Tail.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tail.Tail">module tail.Tail</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">tail.Tail.</span>usingDomains</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.Tail">
+            function <span class="apidocSignatureSpan">tail.</span>Tail
+            <span class="apidocSignatureSpan">(filename, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.EventEmitter">
+            function <span class="apidocSignatureSpan">tail.Tail.</span>EventEmitter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.init">
+            function <span class="apidocSignatureSpan">tail.Tail.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.listenerCount">
+            function <span class="apidocSignatureSpan">tail.Tail.</span>listenerCount
+            <span class="apidocSignatureSpan">(emitter, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">tail.Tail.</span>defaultMaxListeners</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">tail.Tail.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.tail.Tail.prototype">module tail.Tail.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.prototype.constructor">
+            function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(filename, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.prototype.readBlock">
+            function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>readBlock
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.prototype.unwatch">
+            function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>unwatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.prototype.watch">
+            function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>watch
+            <span class="apidocSignatureSpan">(pos)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.prototype.watchEvent">
+            function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>watchEvent
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.tail.Tail.prototype.watchFileEvent">
+            function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>watchFileEvent
+            <span class="apidocSignatureSpan">(curr, prev)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tail" id="apidoc.module.tail">module tail</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail" id="apidoc.element.tail.Tail">
+        function <span class="apidocSignatureSpan">tail.</span>Tail
+        <span class="apidocSignatureSpan">(filename, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tail(filename, options) {
+  var pos, ref, ref1, ref2, ref3, ref4;
+  this.filename = filename;
+  if (options == null) {
+    options = {};
+  }
+  this.readBlock = bind(this.readBlock, this);
+  this.separator = (ref = options.separator) != null ? ref : /[\r]{0,1}\n/, this.fsWatchOptions = (ref1 = options.fsWatchOptions
+) != null ? ref1 : {}, this.fromBeginning = (ref2 = options.fromBeginning) != null ? ref2 : false, this.follow = (ref3 = options
+.follow) != null ? ref3 : true, this.logger = options.logger, this.useWatchFile = (ref4 = options.useWatchFile) != null ? ref4 :
+false;
+  if (this.logger) {
+    this.logger.info(&#x22;Tail starting...&#x22;);
+    this.logger.info(&#x22;filename: &#x22; + this.filename);
+  }
+  this.buffer = &#x27;&#x27;;
+  this.internalDispatcher = new events.EventEmitter();
+  this.queue = [];
+  this.isWatching = false;
+  this.internalDispatcher.on(&#x27;next&#x27;, (function(_this) {
+    return function() {
+      return _this.readBlock();
+    };
+  })(this));
+  if (this.fromBeginning) {
+    pos = 0;
+  }
+  this.watch(pos);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tail.Tail" id="apidoc.module.tail.Tail">module tail.Tail</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.Tail" id="apidoc.element.tail.Tail.Tail">
+        function <span class="apidocSignatureSpan">tail.</span>Tail
+        <span class="apidocSignatureSpan">(filename, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tail(filename, options) {
+  var pos, ref, ref1, ref2, ref3, ref4;
+  this.filename = filename;
+  if (options == null) {
+    options = {};
+  }
+  this.readBlock = bind(this.readBlock, this);
+  this.separator = (ref = options.separator) != null ? ref : /[\r]{0,1}\n/, this.fsWatchOptions = (ref1 = options.fsWatchOptions
+) != null ? ref1 : {}, this.fromBeginning = (ref2 = options.fromBeginning) != null ? ref2 : false, this.follow = (ref3 = options
+.follow) != null ? ref3 : true, this.logger = options.logger, this.useWatchFile = (ref4 = options.useWatchFile) != null ? ref4 :
+false;
+  if (this.logger) {
+    this.logger.info(&#x22;Tail starting...&#x22;);
+    this.logger.info(&#x22;filename: &#x22; + this.filename);
+  }
+  this.buffer = &#x27;&#x27;;
+  this.internalDispatcher = new events.EventEmitter();
+  this.queue = [];
+  this.isWatching = false;
+  this.internalDispatcher.on(&#x27;next&#x27;, (function(_this) {
+    return function() {
+      return _this.readBlock();
+    };
+  })(this));
+  if (this.fromBeginning) {
+    pos = 0;
+  }
+  this.watch(pos);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.EventEmitter" id="apidoc.element.tail.Tail.EventEmitter">
+        function <span class="apidocSignatureSpan">tail.Tail.</span>EventEmitter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.init" id="apidoc.element.tail.Tail.init">
+        function <span class="apidocSignatureSpan">tail.Tail.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  this.domain = null;
+  if (EventEmitter.usingDomains) {
+    // if there is an active domain, then attach to it.
+    domain = domain || require(&#x27;domain&#x27;);
+    if (domain.active &#x26;&#x26; !(this instanceof domain.Domain)) {
+      this.domain = domain.active;
+    }
+  }
+
+  if (!this._events || this._events === Object.getPrototypeOf(this)._events) {
+    this._events = new EventHandlers();
+    this._eventsCount = 0;
+  }
+
+  this._maxListeners = this._maxListeners || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.listenerCount" id="apidoc.element.tail.Tail.listenerCount">
+        function <span class="apidocSignatureSpan">tail.Tail.</span>listenerCount
+        <span class="apidocSignatureSpan">(emitter, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listenerCount = function (emitter, type) {
+  if (typeof emitter.listenerCount === &#x27;function&#x27;) {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.tail.Tail.prototype" id="apidoc.module.tail.Tail.prototype">module tail.Tail.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.prototype.constructor" id="apidoc.element.tail.Tail.prototype.constructor">
+        function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(filename, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Tail(filename, options) {
+  var pos, ref, ref1, ref2, ref3, ref4;
+  this.filename = filename;
+  if (options == null) {
+    options = {};
+  }
+  this.readBlock = bind(this.readBlock, this);
+  this.separator = (ref = options.separator) != null ? ref : /[\r]{0,1}\n/, this.fsWatchOptions = (ref1 = options.fsWatchOptions
+) != null ? ref1 : {}, this.fromBeginning = (ref2 = options.fromBeginning) != null ? ref2 : false, this.follow = (ref3 = options
+.follow) != null ? ref3 : true, this.logger = options.logger, this.useWatchFile = (ref4 = options.useWatchFile) != null ? ref4 :
+false;
+  if (this.logger) {
+    this.logger.info(&#x22;Tail starting...&#x22;);
+    this.logger.info(&#x22;filename: &#x22; + this.filename);
+  }
+  this.buffer = &#x27;&#x27;;
+  this.internalDispatcher = new events.EventEmitter();
+  this.queue = [];
+  this.isWatching = false;
+  this.internalDispatcher.on(&#x27;next&#x27;, (function(_this) {
+    return function() {
+      return _this.readBlock();
+    };
+  })(this));
+  if (this.fromBeginning) {
+    pos = 0;
+  }
+  this.watch(pos);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.prototype.readBlock" id="apidoc.element.tail.Tail.prototype.readBlock">
+        function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>readBlock
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readBlock = function () {
+  var block, stream;
+  if (this.queue.length &#x3e;= 1) {
+    block = this.queue.shift();
+    if (block.end &#x3e; block.start) {
+      stream = fs.createReadStream(this.filename, {
+        start: block.start,
+        end: block.end - 1,
+        encoding: &#x22;utf-8&#x22;
+      });
+      stream.on(&#x27;error&#x27;, (function(_this) {
+        return function(error) {
+          if (_this.logger) {
+            _this.logger.error(&#x22;Tail error: &#x22; + error);
+          }
+          return _this.emit(&#x27;error&#x27;, error);
+        };
+      })(this));
+      stream.on(&#x27;end&#x27;, (function(_this) {
+        return function() {
+          if (_this.queue.length &#x3e;= 1) {
+            return _this.internalDispatcher.emit(&#x22;next&#x22;);
+          }
+        };
+      })(this));
+      return stream.on(&#x27;data&#x27;, (function(_this) {
+        return function(data) {
+          var chunk, i, len, parts, results;
+          _this.buffer += data;
+          parts = _this.buffer.split(_this.separator);
+          _this.buffer = parts.pop();
+          results = [];
+          for (i = 0, len = parts.length; i &#x3c; len; i++) {
+            chunk = parts[i];
+            results.push(_this.emit(&#x22;line&#x22;, chunk));
+          }
+          return results;
+        };
+      })(this));
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.prototype.unwatch" id="apidoc.element.tail.Tail.prototype.unwatch">
+        function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>unwatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unwatch = function () {
+  if (this.watcher) {
+    this.watcher.close();
+  } else {
+    fs.unwatchFile(this.filename);
+  }
+  this.isWatching = false;
+  return this.queue = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log(&#x27;ERROR: &#x27;, error);
+});
+```
+
+If you want to stop tail:
+
+```javascript
+tail.<span class="apidocCodeKeywordSpan">unwatch</span>()
+```
+
+To start watching again:
+```javascript
+tail.watch()
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.prototype.watch" id="apidoc.element.tail.Tail.prototype.watch">
+        function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>watch
+        <span class="apidocSignatureSpan">(pos)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watch = function (pos) {
+  var stats;
+  if (this.isWatching) {
+    return;
+  }
+  this.isWatching = true;
+  stats = fs.statSync(this.filename);
+  this.pos = pos != null ? pos : stats.size;
+  if (this.logger) {
+    this.logger.info(&#x22;filesystem.watch present? &#x22; + (fs.watch !== void 0));
+    this.logger.info(&#x22;useWatchFile: &#x22; + this.useWatchFile);
+  }
+  if (!this.useWatchFile &#x26;&#x26; fs.watch) {
+    if (this.logger) {
+      this.logger.info(&#x22;watch strategy: watch&#x22;);
+    }
+    return this.watcher = fs.watch(this.filename, this.fsWatchOptions, (function(_this) {
+      return function(e) {
+        return _this.watchEvent(e);
+      };
+    })(this));
+  } else {
+    if (this.logger) {
+      this.logger.info(&#x22;watch strategy: watchFile&#x22;);
+    }
+    return fs.watchFile(this.filename, this.fsWatchOptions, (function(_this) {
+      return function(curr, prev) {
+        return _this.watchFileEvent(curr, prev);
+      };
+    })(this));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+tail.unwatch()
+```
+
+To start watching again:
+```javascript
+tail.<span class="apidocCodeKeywordSpan">watch</span>()
+```
+
+# Configuration
+The only mandatory parameter is the path to the file to tail.
+
+```javascript
+var fileToTail = &#x22;/path/to/fileToTail.txt&#x22;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.prototype.watchEvent" id="apidoc.element.tail.Tail.prototype.watchEvent">
+        function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>watchEvent
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchEvent = function (e) {
+  var stats;
+  if (e === &#x27;change&#x27;) {
+    stats = fs.statSync(this.filename);
+    if (stats.size &#x3c; this.pos) {
+      this.pos = stats.size;
+    }
+    if (stats.size &#x3e; this.pos) {
+      this.queue.push({
+        start: this.pos,
+        end: stats.size
+      });
+      this.pos = stats.size;
+      if (this.queue.length === 1) {
+        return this.internalDispatcher.emit(&#x22;next&#x22;);
+      }
+    }
+  } else if (e === &#x27;rename&#x27;) {
+    this.unwatch();
+    if (this.follow) {
+      return setTimeout(((function(_this) {
+        return function() {
+          return _this.watch();
+        };
+      })(this)), 1000);
+    } else {
+      if (this.logger) {
+        this.logger.error(&#x22;&#x27;rename&#x27; event for &#x22; + this.filename + &#x22;. File not available.&#x22;);
+      }
+      return this.emit(&#x22;error&#x22;, &#x22;&#x27;rename&#x27; event for &#x22; + this.filename + &#x22;. File not available.&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.tail.Tail.prototype.watchFileEvent" id="apidoc.element.tail.Tail.prototype.watchFileEvent">
+        function <span class="apidocSignatureSpan">tail.Tail.prototype.</span>watchFileEvent
+        <span class="apidocSignatureSpan">(curr, prev)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watchFileEvent = function (curr, prev) {
+  if (curr.size &#x3e; prev.size) {
+    this.queue.push({
+      start: prev.size,
+      end: curr.size
+    });
+    if (this.queue.length === 1) {
+      return this.internalDispatcher.emit(&#x22;next&#x22;);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
